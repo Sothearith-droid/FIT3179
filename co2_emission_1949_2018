@@ -1,4 +1,4 @@
-Entity,Code,Year,Per capita CO2 emissions
+Country,Code,Year,Per_capita_CO2_emissions
 Afghanistan,AFG,1949,0.0019123714750274117
 Afghanistan,AFG,1950,0.010871001031991744
 Afghanistan,AFG,1951,0.011683673469387755
