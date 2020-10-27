@@ -18,8 +18,7 @@
           "Europe",
           "Africa",
           "Asia",
-          "Oceania",
-          "World"
+          "Oceania"
         ],
         "labels": [
           "Show All",
@@ -28,8 +27,7 @@
           "Europe",
           "Africa",
           "Asia",
-          "Oceania",
-          "World"
+          "Oceania"
         ],
         "name": "Continent Selection: "
       }
@@ -44,8 +42,7 @@
           {"field": "Country", "equal": "Europe"},
           {"field": "Country", "equal": "North America"},
           {"field": "Country", "equal": "South America"},
-          {"field": "Country", "equal": "Oceania"},
-          {"field": "Country", "equal": "World"}
+          {"field": "Country", "equal": "Oceania"}
         ]
       }
     },
@@ -54,26 +51,52 @@
       "filter": "Continent_selection == null || datum.Country == Continent_selection"
     }
   ],
-  "layer": [
-    {
-      "mark": "line",
-      "encoding": {
+  "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
         "y": {"field": "Per_capita_CO2_emissions", "type": "quantitative"},
-        "color": {"field": "Country", "type": "nominal"},
-        "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Year", "type": "ordinal"},
-          {"field": "Per_capita_CO2_emissions", "type": "quantitative"}
-        ]
+        "color": {"condition": {
+        "selection": "hover",
+        "field":"Country",
+        "type":"nominal",
+        "legend": null
+      },
+      "value": "grey"
+    },
+    "opacity": {
+      "condition": {
+        "selection": "hover",
+        "value": 1
+      },
+      "value": 0.2
+    },
+      "tooltip": [
+        {"field": "Country", "type": "nominal"},
+        {"field": "Year", "type": "ordinal"},
+        {"field": "Per_capita_CO2_emissions", "type": "quantitative"}
+      ]
+    },
+  "layer": [
+    {
+    "selection": {
+      "hover": {
+        "type": "single",
+        "on": "mouseover",
+        "empty": "all",
+        "fields": ["Country"],
+        "init": {"Country": "Asia"}
       }
+    },
+    "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+    },
+    {
+      "mark": "line"
     },
     {
       "mark": {
         "type": "text",
-        "align": "right",
+        "align": "left",
         "baseline": "middle",
-        "dx": -12,
+        "dx": 12,
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
