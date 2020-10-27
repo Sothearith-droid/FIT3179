@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Sothearith-droid/FIT3179/main/annual-co-emissions-by-region.csv"
+  },
+  "mark": "area",
+  "transform": [
+    {
+      "filter": {
+        "or": [
+          {"field": "Country", "equal": "International transport"},
+          {"field": "Country", "equal": "Asia (excl. China & India)"},
+          {"field": "Country", "equal": "Europe"},
+          {"field": "Country", "equal": "North America (excl. USA)"},
+          {"field": "Country", "equal": "South America"},
+          {"field": "Country", "equal": "Oceania"},
+          {"field": "Country", "equal": "China"},
+          {"field": "Country", "equal": "India"},
+          {"field": "Country", "equal": "Africa"},
+          {"field": "Country", "equal": "United States"}
+        ]
+      }
+    }
+  ],
+  "encoding": {
+    "x": {"timeUnit": "yearmonth", "field": "Year", "axis": {"format": "%Y"}},
+    "y": {"aggregate": "sum", "field": "Annual_CO2_emissions"},
+    "color": {"field": "Country", "scale": {"scheme": "category20b"}},
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Year", "type": "ordinal"},
+      {"field": "Annual_CO2_emissions", "type": "quantitative"}
+    ]
+  },
+  "config": {}
+}
