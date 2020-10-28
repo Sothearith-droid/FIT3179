@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "CO2 emissions in 2018",
   "width": 800,
   "height": 400,
   "projection": {"type": "equirectangular"},
