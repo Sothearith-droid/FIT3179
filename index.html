@@ -10,6 +10,7 @@
 <body>
 
 <div id="map_vis"></div>
+<div id="stack_area_vis"></div>
 <div id="line_vis"></div>
 
 <script type="text/javascript">
@@ -19,7 +20,12 @@
   }).catch(console.error);
   
   var vis2 = "https://Sothearith-droid.github.io/FIT3179/stack_chart_anual_co2_emission_by_region.vl.json";
-  vegaEmbed('#line_vis', vis2).then(function(result) {
+  vegaEmbed('#stack_area_vis', vis2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis3 = "https://Sothearith-droid.github.io/FIT3179/co2_conc_in_atmosphere.vl.json";
+  vegaEmbed('#line_vis', vis3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
