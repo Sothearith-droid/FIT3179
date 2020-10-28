@@ -25,7 +25,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/Sothearith-droid/FIT3179/main/anual_co2_emission_2018.csv"
+          "url": "https://raw.githubusercontent.com/Sothearith-droid/FIT3179/main/annual_co2_emission_2018.vl.json"
         },
         "key": "Country",
         "fields": ["CO2_emission"]
