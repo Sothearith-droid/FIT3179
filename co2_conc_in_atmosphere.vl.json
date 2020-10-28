@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "CO2 concentrations in atmosphere 1400-2018",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Sothearith-droid/FIT3179/main/global-co-concentration-ppm.csv"
+  },
+  "transform": [{"filter": "datum.Year > 1400"}],
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal"},
+    "y": {
+      "field": "CO2_concentrations",
+      "type": "quantitative",
+      "scale": {"type": "linear", "domain": [260, 420]}
+    },
+    "tooltip": [
+      {"field": "Year", "type": "ordinal"},
+      {"field": "CO2_concentrations", "type": "quantitative"}
+    ]
+  },
+  "config": {}
+}
