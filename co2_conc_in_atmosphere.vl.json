@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "CO2 concentrations in atmosphere 1400-2018",
   "width": 600,
   "height": 400,
   "data": {
