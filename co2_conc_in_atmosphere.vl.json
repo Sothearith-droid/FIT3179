@@ -12,7 +12,8 @@
     "y": {
       "field": "CO2_concentrations",
       "type": "quantitative",
-      "scale": {"type": "linear", "domain": [260, 420]}
+      "scale": {"type": "linear", "domain": [260, 420]},
+      "title": "CO2 concentrations (ppm)"
     },
     "tooltip": [
       {"field": "Year", "type": "ordinal"},
