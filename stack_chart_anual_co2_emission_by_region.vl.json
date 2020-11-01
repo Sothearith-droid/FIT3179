@@ -25,12 +25,11 @@
     }
   ],
   "encoding": {
-    "x": {"timeUnit": "yearmonth", "field": "Year", "axis": {"format": "%Y"}},
-    "y": {"aggregate": "sum", "field": "Annual_CO2_emissions"},
+    "x": {"timeUnit": "yearmonth", "field": "Year", "axis": {"format": "%Y"}, "title": "Year"},
+    "y": {"aggregate": "sum", "field": "Annual_CO2_emissions", "title": "Annual CO2 emissions"},
     "color": {"field": "Country", "scale": {"scheme": "category20b"}},
     "tooltip": [
       {"field": "Country", "type": "nominal"},
-      {"field": "Year", "type": "ordinal"},
       {"field": "Annual_CO2_emissions", "type": "quantitative"}
     ]
   },
