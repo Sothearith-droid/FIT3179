@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
+  "width": 1000,
   "height": 400,
   "projection": {"type": "equirectangular"},
   "data": {
@@ -42,7 +42,7 @@
           "bind": "legend"
         }
       },
-      "mark": {"type": "geoshape"},
+      "mark": {"type": "geoshape", "stroke": "grey"},
       "encoding": {
         "color": {
           "field": "CO2_emission",
