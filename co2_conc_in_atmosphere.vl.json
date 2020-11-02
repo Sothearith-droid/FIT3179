@@ -5,10 +5,14 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Sothearith-droid/FIT3179/main/global-co-concentration-ppm.csv"
   },
-  "transform": [{"filter": "datum.Year > 1400"}],
   "mark": "line",
   "encoding": {
-    "x": {"field": "Year", "type": "ordinal"},
+    "x": {
+      "timeUnit": "yearmonth",
+      "field": "Year",
+      "axis": {"format": "%Y"},
+      "title": "Year"
+    },
     "y": {
       "field": "CO2_concentrations",
       "type": "quantitative",
